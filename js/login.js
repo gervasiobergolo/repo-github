@@ -5,6 +5,3 @@ document.addEventListener("DOMContentLoaded", function (e) {
 
 });
 
-function red() {
-    location.href = "cover.html"
-}
