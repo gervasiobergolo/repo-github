@@ -36,6 +36,17 @@
       margin: auto;
     }
   </style>
+
+  <meta name="google-signin-client_id" content="acá va id de google"
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
+  <script>
+    function onSignIn(googleUser) { 
+      var profile = googleUser.getBasicProfile();
+      localStorage.setItem("usuario", profile.getName());
+      document.getElementById('datos').innerHTML = perfil;
+      location.href = "acá va el host html"
+    }  
+    </script>
 </head>
 
 <body class="text-center">
@@ -58,7 +69,7 @@
       <label>
         <input type="checkbox" value="remember-me"> Recuérdame
       </label>
-      <button class="btn btn-lg btn-primary btn-block" onclick="red()" type="submit">Ingresar</button>
+      <button class="btn btn-lg btn-primary btn-block" type="submit">Ingresar</button>
       <p class="mt-5 mb-3 text-muted">&copy; 2020</p>
   </form>
   </div>
