@@ -5,3 +5,6 @@ document.addEventListener("DOMContentLoaded", function (e) {
 
 });
 
+function onSignIn () {
+    window.location.href = "cover.html";
+}
