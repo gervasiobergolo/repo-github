@@ -2,28 +2,41 @@
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.
 document.addEventListener("DOMContentLoaded", function (e) {
-
-});
-
-function onSignIn () {
-    window.location.href = "cover.html";
-}
-
-document.addEventListener("DOMContentLoaded", function(e) {
-
-    let userLogged = localStorage.getItem('User-Logged');
-    let infoUser = document.getElementById("Info-user")
-    let user = document.getElementById("user");
-
-    if (userLogged) {
-        userLogged=JSON.parse(userLogged);
-        user.innerText = user.innerText + 'Usuario logueado ' + userLogged.email;
-        infoUser.style = "display: inline-block";
+    
+    document.getElementById("SubmitBtn").addEventListener("click", function(e) {
+   
+    let inputUser = document.getElementById("inputUser");
+    let inputPassword = document.getElementById("inputPassword");
+    let camposCompletos = true;
+    
+    if (inputUser.value === "") {
+        inputUser.classList.add("invalid");
+        camposCompletos = false;
+    }
+    if (inputPassword.value === "") {
+        inputoPassword.classList.add("invalid");
+        camposCompletos = false;
 
     }
 
-    document.getElementById("Salir").addEventListener("click", function(){ 
-        localStorage.removeItem('User-Logged');
-        window.location = 'index.html'
-    })
-})
+    if (camposCompletos) {
+        localStorage.setItem("User-Logged", JSON.stringify({ email: inputUser.value}));
+        window.location = 'cover.html'
+    } else {alert("Debes ingresar datos válidos")}
+
+}); 
+
+})  
+
+
+      // document.getElementById("Salir").addEventListener("click", function(){ 
+     //   localStorage.removeItem('User-Logged');
+    //   window.location = 'index.html'
+   // })
+
+
+
+
+//function onSignIn () {
+  //window.location.href = "cover.html";
+  //}
