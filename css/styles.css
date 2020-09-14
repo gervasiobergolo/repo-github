@@ -139,3 +139,41 @@ a.custom-card:hover {
 .checked {
   color: orange;
 }
+
+#form {
+  width: 250px;
+  margin: 0 auto;
+  height: 50px;
+}
+
+#form p {
+  text-align: center;
+}
+
+#form label {
+  font-size: 20px;
+}
+
+.checked {
+  color: orange;
+}
+
+.star-rating {
+  direction: rtl;
+}
+
+.star-rating input[type=radio] {
+  display: none
+}
+
+.star-rating label {
+  color: rgb(133, 142, 192);
+  font-size: 1.3em;
+  cursor: pointer;
+}
+
+.star-rating label:hover,
+.star-rating label:hover~label,
+.star-rating input[type=radio]:checked~label {
+  color: orange;
+}

@@ -45,9 +45,9 @@ var getJSONData = function(url){
 //elementos HTML presentes.
 document.addEventListener("DOMContentLoaded", function(e){ 
 
-  const UserLogged = localStorage.getItem('email')
+  const UserLogged = localStorage.getItem('email');
   const infoUser = document.getElementById('username');
-  const logOutButton = document.getElementById("logOut")
+  const logOutButton = document.getElementById("logOut");
 
   if (UserLogged === null) {
     window.location.href = "index.html"
