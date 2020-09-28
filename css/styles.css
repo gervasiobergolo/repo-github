@@ -177,3 +177,93 @@ a.custom-card:hover {
 .star-rating input[type=radio]:checked~label {
   color: orange;
 }
+
+/* Category rel */
+
+#rel {
+  margin: 30px 300px 30px 0;
+  
+}
+
+#rel .card-notify-badge {
+  position: absolute;
+  left: -10px;
+  top: -20px;
+  background: #000000;
+  text-align: center;
+  border-radius: 30px 30px 30px 30px;
+  color: #000;
+  padding: 5px 10px;
+  font-size: 14px;
+}
+
+#rel .card-notify-year {
+  position: absolute;
+  right: -10px;
+  top: -20px;
+  background: #ff4444;
+  border-radius: 50%;
+  text-align: center;
+  color: #fff;
+  font-size: 14px;
+  width: 50px;
+  height: 50px;
+  padding: 15px 0 0 0;
+}
+
+#rel .card-detail-badge {
+ 
+  text-align: center;
+  border-radius: 30px 30px 30px 30px;
+  color: #000;
+  padding: 5px 10px;
+  font-size: 14px;
+}
+
+#rel .card:hover {
+  background: #fff;
+  box-shadow: 12px 15px 20px 0px rgba(46, 61, 73, 0.15);
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+#rel .card-image-overlay {
+  font-size: 20px;
+}
+
+#rel .card-image-overlay span {
+  display: inline-block;
+}
+
+#rel .ad-btn {
+  text-transform: uppercase;
+  width: 150px;
+  height: 40px;
+  border-radius: 100x;
+  font-size: 16px;
+  line-height: 35px;
+  text-align: center;
+  border: 2px solid #000000;
+  display: block;
+  text-decoration: none;
+  margin: 20px auto 1px auto;
+  color: #000;
+  overflow: hidden;
+  position: relative;
+
+}
+
+#rel .ad-btn:hover {
+  color: #1e1717;
+  border: 1px solid #000000;
+  background: transparent;
+  transition: all 0.3s ease;
+  box-shadow: 12px 15px 20px 0px rgba(46, 61, 73, 0.15);
+}
+
+
+#carrusel {
+  width: 450px;
+  
+}
+

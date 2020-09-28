@@ -20,20 +20,53 @@ function showProductsList(array, images) {
 <p><strong>Cantidad de vendidos</strong>
 <br>
 ` + array.soldCount + `</p>
+<p style><strong>Articulos relacionados</strong>
+  <div  class="container">
+      <div class="row" id="ads">
+      <div id="rel"></div>
+  </div>
 </div>
 `
-  for (let i = 0; i < images.length; i++) {
-    let imageSrc = images[i];
-
-    gallery += `
-    <div class="col-lg-3 col-md-4 col-8>
-    <div class="d-block mb-4 h-100">
-    <img class="img-fluid img-thumbnail" src="` + imageSrc + `" alt="">
+  gallery += `<div class="container" id="carrusel">
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
+        </ol>
+        <div class="carousel-inner img-thumbnail">
+            <div class="carousel-item active">
+                <img src="${array.images[0]}" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="${array.images[1]}" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="${array.images[2]}" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="${array.images[3]}" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="${array.images[4]}" class="d-block w-100" alt="...">
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
     </div>
-    </div>
+</div>
+<br>
     `
-  }
-  document.getElementById("productInfo").innerHTML = htmlContentToAppend + gallery;
+
+  document.getElementById("produInfo").innerHTML = htmlContentToAppend + gallery;
 
 }
 
@@ -130,3 +163,60 @@ newComment_input.onsubmit = function (e) {
   console.log(commentsArray);
 
 }
+
+
+function showRelated() {
+  let relatedInfo = "";
+  for (let i = 0; i < relatedProduct.length; i++) {
+    let related = relatedProduct[i];
+    if (i == productInfoArray.relatedProducts[0] || i == productInfoArray.relatedProducts[1]) {
+      relatedInfo +=
+        `
+  <div class=" col-sm-4 ">
+      <div class="">
+          <div class="">
+          <span class=""><h6>` +
+        related.name +
+        `</h6></span>
+              
+              <img class="img-fluid" src="` +
+        relatedProduct[i].imgSrc +
+        `" alt=" ` +
+        relatedProduct[i].name +
+        `" />
+          </div>
+          <div class="">
+          <span class=""><strong> ` +
+        relatedProduct[i].currency +
+        `</strong></span>
+          <span class=""><strong> ` +
+        relatedProduct[i].cost +
+        `</strong><br></span>
+              <span class="">  ` +
+        relatedProduct[i].description +
+        `<br></span>
+              <span class=""><strong>Vendidos</strong> ` +
+        relatedProduct[i].soldCount +
+        ` </span>
+          </div>
+          <div class="">
+              <div class="">
+              </div>
+              <a class="ad-btn" href="category-info.html">View</a>
+          </div>
+      </div>
+  </div>
+`;
+    }
+  }
+  document.getElementById("rel").innerHTML = relatedInfo;
+}
+
+document.addEventListener("DOMContentLoaded", function (e) {
+  getJSONData(PRODUCTS_URL).then(function (resultObj) {
+    if (resultObj.status === "ok") {
+      relatedProduct = resultObj.data;
+      showRelated();
+    }
+  });
+});

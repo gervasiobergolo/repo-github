@@ -23,7 +23,20 @@
       <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
       <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
       <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
-      <span id="username" style="color: white;" class="py-2 d-none d-md-inline-block"></span>
+      <div class="dropdown">
+        <a
+          class="btn btn-secondary dropdown-toggle"
+          href="#"
+          role="button"
+          id="username"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+        >
+        </a>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+          <div id="btnlogout"></div>   
+        </div>
     </div>
   </nav>
   <main role="main">
@@ -35,7 +48,7 @@
           seleccionado previamente, siempre se visualizará el presente: <strong>Chevrolet Onix Joy</strong>.</p>
       </div>
       <div class="container">
-        <div class="row text-center text-lg-left pt-2" id="productInfo"></div>
+        <div class="row text-center text-lg-left pt-2" id="produInfo"></div>
         <div class="row text-center text-lg-left pt-2" id="productComments"></div>
         <br />
         <form id="newComment">
