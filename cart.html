@@ -36,35 +36,111 @@
 <body>
   <nav class="site-header sticky-top py-1 bg-dark">
     <div class="container d-flex flex-column flex-md-row justify-content-between">
-      <a class="py-2 d-none d-md-inline-block" href="cover.html">Inicio</a>
+      <a class="py-2 d-none d-md-inline-block" href="index.html">Inicio</a>
       <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
       <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
       <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
-      <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
+
       <div class="dropdown">
-        <a
-          class="btn btn-secondary dropdown-toggle"
-          href="#"
-          role="button"
-          id="username"
-          data-toggle="dropdown"
-          aria-haspopup="true"
-          aria-expanded="false"
-        >         
+        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="username" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
         </a>
         <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-          <div id="btnlogout"></div>   
+          <div id="btnlogout"></div>
         </div>
-    </div>
+      </div>
   </nav>
-  <div class="container p-5">
-    <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
-      <h4 class="alert-heading">¡A trabajar! :)</h4>
-      <p>Esta sección corresponde a: Entrega 5 (Fecha de entrega: 11/10/2020) y Entrega 6 (Fecha de entrega: 25/10/2020).</p>
-      <hr>
-      <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
-    </div>
-  </div>
+  <main>
+    <div class="container pt-5">
+      <div class="text-center">
+        <h2>Carrito</h2>
+        <p class="lead">Tu carrito tiene <span class="badge badge-danger color" id="cartCountDOM"></span> artículos.</p>
+      </div>
+
+      <div class="container">
+        <div class="row">
+          <div class="col-8 list-group mt-4">
+            <ul class="list-group-item rounded">
+              <div class="row">
+                <div class="col-3 d-flex align-items-center">
+                  <div class="d-flex w-100 align-items-center justify-content-center">
+                    <b>Articulo</b>
+                  </div>
+                </div>
+                <div class="col-3 d-flex align-items-center">
+                  <div class="d-flex w-100 align-items-center justify-content-center">
+                    <b>Nombre</b>
+                  </div>
+                </div>
+                <div class="col-3 d-flex align-items-center">
+                  <div class="d-flex w-100 align-items-center justify-content-center">
+                    <b>Precio</b>
+                  </div>
+                </div>
+                <div class="col-3 d-flex align-items-center">
+                  <div class="d-flex w-100 align-items-center justify-content-center">
+                    <b>Cantidad</b>
+                  </div>
+                </div>
+              </div>
+            </ul>
+            <div class="mt-3" id="carritoContenido"></div>
+          </div>
+          <div class="col-4 mt-4 pr-0">
+            <ul class="list-group mb-3">
+              <li class="list-group-item d-flex justify-content-between lh-condensed">
+                <div>
+                  <h6 class="my-0">Sub-Total</h6>
+                  <small class="text-muted">Costo sin envío</small>
+                </div>
+                <span class="text-muted" id="subTotalDOM">-</span>
+              </li>   
+              <li class="list-group-item d-flex justify-content-between">
+                <span>Moneda</span>
+                <div class="custom-control custom-radio">
+                  <input id="pesoCurrency" name="currencyType" type="radio" class="custom-control-input color"
+                    checked="" required="">
+                  <label class="custom-control-label" for="pesoCurrency">UYU</label>
+                </div>
+                <div class="custom-control custom-radio">
+                  <input id="dollarCurrency" name="currencyType" type="radio" class="custom-control-input" required="">
+                  <label class="custom-control-label" for="dollarCurrency">USD</label>
+                </div>
+              </li>
+              <li class="list-group-item d-flex justify-content-between rounded-bottom">
+                <span>Total</span>
+                <strong id="totalCostDOM">-</strong>
+              </li>
+              <li class="list-group mt-3">
+                <button class="btn btn-brand w-100 btn-primary font-weight-bold">Finalizar Compra</button>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <hr class="mb-4">
+      <h5 class="mb-3">Tipo de Envío</h5>
+      <div class="d-block my-3">
+        <div class="custom-control custom-radio">
+          <input id="premiumradio" name="publicationType" type="radio" class="custom-control-input" checked=""
+            required="">
+          <label class="custom-control-label" for="premiumradio">Premium 2 a 5 días (15%)</label>
+        </div>
+        <div class="custom-control custom-radio">
+          <input id="expressradio" name="publicationType" type="radio" class="custom-control-input" required="">
+          <label class="custom-control-label" for="expressradio">Express 5 a 8 días (7%)</label>
+        </div>
+        <div class="custom-control custom-radio">
+          <input id="standardradio" name="publicationType" type="radio" class="custom-control-input" required="">
+          <label class="custom-control-label" for="standardradio">Standar 12 a 15 días (5%)</label>
+        </div>
+        <div class="row">
+          <button type="button" class="mt-1 btn btn-link" data-toggle="modal" data-target="#contidionsModal">Ver
+            condiciones</button>
+        </div>
+      </div>
+      <hr class="mb-4">
+  </main>
   <div id="spinner-wrapper">
     <div class="lds-ring">
       <div></div>
