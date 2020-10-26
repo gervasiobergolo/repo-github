@@ -40,7 +40,6 @@
       <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
       <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
       <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
-
       <div class="dropdown">
         <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="username" data-toggle="dropdown"
           aria-haspopup="true" aria-expanded="false">
@@ -50,56 +49,101 @@
         </div>
       </div>
   </nav>
-  <main>
-    <div class="container pt-5">
-      <div class="text-center">
-        <h2>Carrito</h2>
-        <p class="lead">Tu carrito tiene <span class="badge badge-danger color" id="cartCountDOM"></span> artículos.</p>
-      </div>
+  <div class="container pt-5">
+    <div class="text-center">
+      <h2>Carrito</h2>
+      <p class="lead">Tu carrito tiene <span class="badge badge-danger color" id="cartCountDOM"></span> artículos.</p>
+    </div>
 
-      <div class="container">
-        <div class="row">
-          <div class="col-8 list-group mt-4">
-            <ul class="list-group-item rounded">
-              <div class="row">
-                <div class="col-3 d-flex align-items-center">
-                  <div class="d-flex w-100 align-items-center justify-content-center">
-                    <b>Articulo</b>
-                  </div>
-                </div>
-                <div class="col-3 d-flex align-items-center">
-                  <div class="d-flex w-100 align-items-center justify-content-center">
-                    <b>Nombre</b>
-                  </div>
-                </div>
-                <div class="col-3 d-flex align-items-center">
-                  <div class="d-flex w-100 align-items-center justify-content-center">
-                    <b>Precio</b>
-                  </div>
-                </div>
-                <div class="col-3 d-flex align-items-center">
-                  <div class="d-flex w-100 align-items-center justify-content-center">
-                    <b>Cantidad</b>
-                  </div>
+    <div class="container">
+      <div class="row">
+        <!-- Muestro contenido del Carrito -->
+        <div class="col-8 list-group mt-4">
+          <ul class="list-group-item rounded">
+            <div class="row">
+              <div class="col-3 d-flex align-items-center">
+                <div class="d-flex w-100 align-items-center justify-content-center">
+                  <b>Articulo</b>
                 </div>
               </div>
-            </ul>
-            <div class="mt-3" id="carritoContenido"></div>
-          </div>
-          <div class="col-4 mt-4 pr-0">
-            <ul class="list-group mb-3">
-              <li class="list-group-item d-flex justify-content-between lh-condensed">
-                <div>
-                  <h6 class="my-0">Sub-Total</h6>
-                  <small class="text-muted">Costo sin envío</small>
+              <div class="col-3 d-flex align-items-center">
+                <div class="d-flex w-100 align-items-center justify-content-center">
+                  <b>Nombre</b>
                 </div>
-                <span class="text-muted" id="subTotalDOM">-</span>
-              </li>   
+              </div>
+              <div class="col-3 d-flex align-items-center">
+                <div class="d-flex w-100 align-items-center justify-content-center">
+                  <b>Precio</b>
+                </div>
+              </div>
+              <div class="col-3 d-flex align-items-center">
+                <div class="d-flex w-100 align-items-center justify-content-center">
+                  <b>Cantidad</b>
+                </div>
+            </div>
+          </ul>
+          <div class="mt-3" id="carritoContenido"></div>
+        </div>
+        <!-- Muestro SubTotal -->
+        <div class="col-4 mt-4 pr-0">
+          <ul class="list-group mb-3">
+            <li class="list-group-item d-flex justify-content-between lh-condensed">
+              <div>
+                <h6 class="my-0">Sub-Total</h6>
+                <small class="text-muted">Costo sin envío</small>
+              </div>
+              <span class="text-muted" id="subTotalDOM">-</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div id="success"></div>
+    <div id="alertSuccess">
+      <br>
+      <form id="form-afuera" novalidate class="container pt-5">
+        <div class="container border rounded" style="width: 50%;">
+          <h4 style="margin-top: 20px; text-align: center;">Dirección de envío</h4>
+          <br>
+          <div class="container">
+            <h5><strong>Dirección</strong></h5>
+
+            <input id="cyn" class="form-control" type="text" name="datosenvio" placeholder="Calle y número" required>
+            <div class="invalid-feedback">
+              Debes ingresar una calle
+            </div><br>
+
+            <input id="esquina" class="form-control" type="text" name="datosenvio" placeholder="Esquina" required>
+            <div class="invalid-feedback">
+              Debes ingresar una esquina
+            </div><br>
+
+            <input id="pais" class="form-control" type="text" name="datosenvio" placeholder="País" required>
+            <div class="invalid-feedback">
+              Debes ingresar un país
+            </div><br>
+            <hr class="mb-4">
+            <h5 class="mb-3">Tipo de Envío</h5>
+            <div class="d-block my-3">
+              <div class="custom-control custom-radio">
+                <input id="premiumradio" name="publicationType" type="radio" class="custom-control-input" checked="" required="">
+                <label class="custom-control-label" for="premiumradio">Premium 2 a 5 días (15%)</label>
+              </div>
+              <div class="custom-control custom-radio">
+                <input id="expressradio" name="publicationType" type="radio" class="custom-control-input" required="">
+                <label class="custom-control-label" for="expressradio">Express 5 a 8 días (7%)</label>
+              </div>
+              <div class="custom-control custom-radio">
+                <input id="standardradio" name="publicationType" type="radio" class="custom-control-input" required="">
+                <label class="custom-control-label" for="standardradio">Standar 12 a 15 días (5%)</label>
+              </div>
+              
+              <br>
+
               <li class="list-group-item d-flex justify-content-between">
                 <span>Moneda</span>
                 <div class="custom-control custom-radio">
-                  <input id="pesoCurrency" name="currencyType" type="radio" class="custom-control-input color"
-                    checked="" required="">
+                  <input id="pesoCurrency" name="currencyType" type="radio" class="custom-control-input color" checked="" required="">
                   <label class="custom-control-label" for="pesoCurrency">UYU</label>
                 </div>
                 <div class="custom-control custom-radio">
@@ -107,40 +151,81 @@
                   <label class="custom-control-label" for="dollarCurrency">USD</label>
                 </div>
               </li>
+
+              <li class="list-group-item d-flex justify-content-between lh-condensed">
+                <div>
+                  <h6 class="my-0">P0rcentaje</h6>
+                  <small class="text-muted">Según el tipo de envío</small>
+                </div>
+                <span class="text-muted" id="shippingPercentageDOM">-</span>
+              </li>
+
               <li class="list-group-item d-flex justify-content-between rounded-bottom">
                 <span>Total</span>
                 <strong id="totalCostDOM">-</strong>
-              </li>
-              <li class="list-group mt-3">
-                <button class="btn btn-brand w-100 btn-primary font-weight-bold">Finalizar Compra</button>
-              </li>
-            </ul>
+              </li> 
+              <br>
+              <div class="row">
+                <button type="button" class="mt-1 btn btn-link" data-toggle="modal" data-target="#contidionsModal">Ver condiciones</button>
+              </div>
+              <div id="boton" style="text-align: center;">
+                <button type="button" id="botonModal" class="btn btn-primary" style="font-size: 14px;" data-toggle="modal"
+                  data-target="#modal1">Seleccionar forma de pago</button>
+                <div id="alertModal"></div>
+              </div><br>
+            </div>
           </div>
-        </div>
-      </div>
-      <hr class="mb-4">
-      <h5 class="mb-3">Tipo de Envío</h5>
-      <div class="d-block my-3">
-        <div class="custom-control custom-radio">
-          <input id="premiumradio" name="publicationType" type="radio" class="custom-control-input" checked=""
-            required="">
-          <label class="custom-control-label" for="premiumradio">Premium 2 a 5 días (15%)</label>
-        </div>
-        <div class="custom-control custom-radio">
-          <input id="expressradio" name="publicationType" type="radio" class="custom-control-input" required="">
-          <label class="custom-control-label" for="expressradio">Express 5 a 8 días (7%)</label>
-        </div>
-        <div class="custom-control custom-radio">
-          <input id="standardradio" name="publicationType" type="radio" class="custom-control-input" required="">
-          <label class="custom-control-label" for="standardradio">Standar 12 a 15 días (5%)</label>
-        </div>
-        <div class="row">
-          <button type="button" class="mt-1 btn btn-link" data-toggle="modal" data-target="#contidionsModal">Ver
-            condiciones</button>
-        </div>
-      </div>
-      <hr class="mb-4">
-  </main>
+    </div>
+  </div>
+<br>
+
+</div><br>
+<div id="confirmFinal" class="container" style="text-align: center;">
+  <button id="botonFinal" type="submit" class="btn btn-success" style="font-size: 16px; width: 400px;">Finalizar compra</button>
+</div>
+</form>
+</div>
+<br>
+
+<!------------Modal------------>
+
+<div class="modal fade" id="modal1">
+<div class="modal-dialog">
+<div class="modal-content">
+  <div class="modal-header">
+    <h4 class="modal-title">Elegí la forma de pago</h4>
+  </div>
+  <div class="modal-body">
+    <form action="" id="form-adentro" novalidate>
+      <div>
+        <h4>Costo total: <span></span></h4>
+        <br>
+        <div>
+          <h4>Método de pago</h4>
+          <input id="credito" type="radio" name="pago" value="c" checked="" required>
+          <label for="credito">Crédito</label><br>
+
+          <input id="transfer" type="radio" name="pago" value="t" required>
+          <label for="transfer">Transferencia bancaria</label><br>
+
+          <div id="paymentMethod"></div><br>
+
+          <div class="row">
+            <div class="col-6">
+              <button type="submit" class="btn btn-block btn-success">Confirmar</button>
+            </div>
+            <div class="col-6">
+              <button type="submit" class="btn btn-block btn-outline-secondary"
+                data-dismiss="modal">Cancelar</button>
+            </div>
+          </div>
+
+    </form>
+  </div>
+</div>
+</div>
+</div>
+
   <div id="spinner-wrapper">
     <div class="lds-ring">
       <div></div>
@@ -149,6 +234,17 @@
       <div></div>
     </div>
   </div>
+
+  <footer class="text-muted">
+    <div class="container">
+      <p class="float-right">
+        <a href="#">Volver arriba</a>
+      </p>
+      <p>Este sitio forma parte de Desarrollo Web - JAP - 2020</p>
+      <p>Clickea <a target="_blank" href="Letra.pdf">aquí</a> para descargar la letra del obligatorio.</p>
+    </div>
+  </footer>
+
   <script src="js/jquery-3.4.1.min.js"></script>
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/dropzone.js"></script>
