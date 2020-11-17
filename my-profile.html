@@ -4,11 +4,9 @@
 
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <title>eMercado - Todo lo que busques está aquí</title>
-
   <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
   <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
 
@@ -40,24 +38,16 @@
       <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
       <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
       <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
-      <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
       <div class="dropdown">
-        <a
-          class="btn btn-secondary dropdown-toggle"
-          href="#"
-          role="button"
-          id="username"
-          data-toggle="dropdown"
-          aria-haspopup="true"
-          aria-expanded="false"
-        >         
+        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="username" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
         </a>
         <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-          <div id="btnlogout"></div>   
+          <div id="btnlogout"></div>
         </div>
-    </div>
+      </div>
   </nav>
-  <div class="container p-5">
+  <!--<div class="container p-5">
     <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
       <h4 class="alert-heading">¡A trabajar! :)</h4>
       <p>Esta sección corresponde a: Entrega 7 (Fecha de entrega: 8/11/202020) -> Punto 1 y 2.</p>
@@ -69,6 +59,76 @@
     <div class="container">
       <p>Este sitio forma parte de Desarrollo Web - JAP - 2020</p>
       <p>Clickea <a target="_blank" href="Letra.pdf">aquí</a> para descargar la letra del obligatorio.</p>
+    </div>
+  </footer>-->
+  <div class="text-center p-4">
+    <h2>Mi perfil</h2>
+    <p class="lead">Ingresa aquí tus datos a guardar</p>
+  </div>
+  <br>
+  <div class="container" style="width: 500px; border-radius: 8px;" id="profile-img">
+    <img src="" alt="image" id="image" class="img-fluid img-thumbnail mb-3" width="300">
+    <form id="perfilForm">
+
+      <h3 style="text-align: center; padding-top: 20px;">Tus datos</h3>
+
+      <div class="">
+        <label for="avatar">Subir foto</label>
+        <input type="file" id="input" class="btn btn-light" accept=".jpg, .jpeg, .png">
+      </div>
+      <br>
+
+      <div class="list-group-item rounded">
+        <label for="name" class="col-sm-2 col-form-label"></label>
+        <div class="col-sm-10">
+          <input type="text" id="nombre" class="form-control" placeholder="Nombre">
+        </div>
+      </div>
+
+      <div class="list-group-item rounded">
+        <label for="apellido" class="col-sm-2 col-form-label"></label>
+        <div class="col-sm-10">
+          <input type="text" id="apellido" class="form-control" placeholder="Apellido">
+        </div>
+      </div>
+
+      <div class="list-group-item rounded">
+        <label for="edad" class="col-sm-2 col-form-label"></label>
+        <div class="col-sm-10">
+          <input type="number" id="edad" class="form-control" placeholder="Edad" min="0">
+        </div>
+      </div>
+
+      <div class="list-group-item rounded">
+        <label for="email" class="col-sm-2 col-form-label"></label>
+        <div class="col-sm-10">
+          <input type="email" id="email" class="form-control" placeholder="E-mail">
+        </div>
+      </div>
+
+      <div class="list-group-item rounded">
+        <label for="telefono" class="col-sm-2 col-form-label"></label>
+        <div class="col-sm-10">
+          <input type="tel" id="telefono" class="form-control" placeholder="Teléfono">
+        </div>
+      </div>
+
+      <div id="save" class="">
+        <button type="submit" class="btn btn-primary" style="font-size: 16px; width: 400px;">Guardar</button>
+    </form>
+  </div>
+  </div>
+
+  <footer class="text-muted bg-light">
+    <div class="container">
+      <p class="float-right">
+        <a href="#">Volver arriba</a>
+      </p>
+      <p>Este sitio forma parte de Desarrollo Web - JAP - 2020</p>
+      <p class="mb-0">
+        Clickea <a target="_blank" href="Letra.pdf">aquí</a> para descargar la
+        letra del obligatorio.
+      </p>
     </div>
   </footer>
   <div class="alert fade alert-success" role="alert" id="alertResult">
@@ -85,9 +145,8 @@
       <div></div>
     </div>
   </div>
-  <script src="js/jquery-3.4.1.min.js"></script>
+  <script src="js/jquery-3.5.1.min.js"></script>
   <script src="js/bootstrap.bundle.min.js"></script>
-  <script src="js/dropzone.js"></script>
   <script src="js/init.js"></script>
   <script src="js/my-profile.js"></script>
 </body>

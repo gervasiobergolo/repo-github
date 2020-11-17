@@ -267,3 +267,13 @@ a.custom-card:hover {
   
 }
 
+#save {
+  text-align: center;
+  margin-top: 25px ;
+  margin-bottom: 25px ;
+}
+
+#profile-img { 
+  text-align: center;
+
+}
